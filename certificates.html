@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates | Immanuel Fernandes</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #e3f2fd;
+      color: #0d47a1;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1976d2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2em;
+    }
+
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+
+    .certificate {
+      background: #ffffff;
+      border: 1px solid #bbdefb;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .certificate h2 {
+      font-size: 1.2em;
+      color: #1565c0;
+    }
+
+    .certificate p {
+      font-size: 0.95em;
+      color: #0d47a1;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Certificates</h1>
+    <p>Academic and Professional Achievements</p>
+  </header>
+
+  <section>
+    <!-- Certificates start -->
+    <script>
+      const certificates = [
+        ["E-commerce Business Blueprint", "2024-06-28", "IBM SkillsBuild"],
+        ["How to Make a Resume (With Examples) | Indeed Career Guide", "2024-06-27", "IBM SkillsBuild"],
+        ["How to Write an Entry Level Cover Letter (With Examples) | Indeed Career Guide", "2024-06-27", "IBM SkillsBuild"],
+        ["10 Essential Critical Thinking Skills (And How to Improve Them) | Indeed Career Guide", "2024-06-27", "IBM SkillsBuild"],
+        ["What's the Importance of Critical Thinking in the Workplace? | Indeed Career Guide", "2024-06-27", "IBM SkillsBuild"],
+        ["How to Develop Critical Thinking Skills | Indeed Career Guide", "2024-06-27", "IBM SkillsBuild"],
+        ["What is Critical Thinking and 7 Reasons Why Critical Thinking is Important | Potential", "2024-06-27", "IBM SkillsBuild"],
+        ["What is Critical Thinking? | GCFLearnFree.org", "2024-06-27", "IBM SkillsBuild"],
+
+        ["Professional Skills", "2024-06-27", "IBM SkillsBuild"],
+        ["Solving Problems with Critical and Creative Thinking (Earn a badge!)", "2024-06-27", "IBM SkillsBuild"],
+        ["Deliver Quality Work with Agility (Earn a badge!)", "2024-06-27", "IBM SkillsBuild"],
+        ["Interpersonal Skills (Earn a badge!)", "2024-06-26", "IBM SkillsBuild"],
+        ["Collaborate Effectively (Earn a badge!)", "2024-06-26", "IBM SkillsBuild"],
+        ["Present with Purpose (Earn a badge!)", "2024-06-26", "IBM SkillsBuild"],
+        ["Artificial Intelligence Fundamentals (Earn a credential!)", "2024-06-25", "IBM SkillsBuild"],
+        ["The Money Maker GANs Game", "2024-06-25", "IBM SkillsBuild"],
+        ["Mastering the Art of Prompting", "2024-06-25", "IBM SkillsBuild"],
+        ["Your Future in AI: The Job Landscape", "2024-06-24", "IBM SkillsBuild"],
+        ["AI Ethics", "2024-06-24", "IBM SkillsBuild"],
+        ["Run AI Models with IBM Watson Studio", "2024-06-24", "IBM SkillsBuild"],
+        ["Artificial Intelligence in Practice", "2024-06-24", "IBM SkillsBuild"],
+        ["What is artificial intelligence?", "2024-06-24", "IBM SkillsBuild"],
+        ["Machine Learning and Deep Learning", "2024-06-22", "IBM SkillsBuild"],
+        ["Natural Language Processing and Computer Vision", "2024-06-22", "IBM SkillsBuild"],
+        ["Introduction to Artificial Intelligence", "2024-06-21", "IBM SkillsBuild"],
+        ["Earn it! Accept it! Share it! | IBM SkillsBuild", "2024-06-21", "IBM SkillsBuild"],
+
+        ["Create a Credly account", "2024-06-21", "Credly"],
+        ["Advanced Artificial Intelligence in App Creation", "2022-01-01", "Udemy"],
+        ["Artificial Intelligence in App Creation Beginners Edition", "2022-01-01", "Udemy"],
+        ["Digishock 3.0 The Future of Artificial Intelligence (AI)", "2022-01-01", "Udemy"],
+        ["Laboratory session in Biology", "2018-01-01", "Nehru Centre"],
+        ["Laboratory session in Astronomy", "2018-01-01", "Nehru Centre"],
+        ["Laboratory session in Chemistry", "2018-01-01", "Nehru Centre"],
+        ["Laboratory session in Mechanics", "2019-01-01", "Nehru Centre"],
+        ["Laboratory session in Botany", "2019-01-01", "Nehru Centre"],
+        ["Laboratory session in Optics", "2019-01-01", "Nehru Centre"],
+        ["Honing Life Skills for Professional and Personal success", "2021-01-01", "-"]
+      ];
+
+      const container = document.currentScript.parentElement;
+      certificates.forEach(([title, date, org]) => {
+        const cert = document.createElement('div');
+        cert.className = 'certificate';
+        cert.innerHTML = `<h2>${title}</h2><p>Organization: ${org}</p><p>Completed on: ${new Date(date).toLocaleDateString()}</p>`;
+        container.appendChild(cert);
+      });
+    </script>
+  </section>
+</body>
+</html>

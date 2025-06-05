@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pos~an Entertainment - Official Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Adolf_Logo_Small.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-slate-900 */
+            color: #f3f4f6; /* text-gray-100 */
+        }
+        .video-thumbnail img {
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+        .modal-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .modal-scrollbar::-webkit-scrollbar-track {
+            background: #374151; /* bg-gray-700 */
+            border-radius: 10px;
+        }
+        .modal-scrollbar::-webkit-scrollbar-thumb {
+            background: #9ca3af; /* bg-gray-400 */
+            border-radius: 10px;
+        }
+        .modal-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* bg-gray-500 */
+        }
+        /* Add a subtle gradient background to the body for a more premium feel */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.98) 50%, rgba(17, 24, 39, 0.95) 100%), url('https://placehold.co/1920x1080/000000/333333?text=Subtle+Background+Texture&font=Inter') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 0.3; /* Adjust opacity for subtlety */
+        }
+        .glassmorphism {
+            background: rgba(31, 41, 55, 0.6); /* bg-slate-800 with opacity */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium text-slate-300 hover:bg-slate-700 hover:text-white transition-colors;
+        }
+        .nav-link-active {
+            @apply bg-slate-700 text-white;
+        }
+        .section-title {
+            @apply text-3xl font-semibold text-amber-300 mb-6 border-l-4 border-amber-400 pl-4;
+        }
+
+        
+        .site-footer {
+  background-color: rgba(7, 10, 14, 0.6);;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  border-top: 1px solid #333;
+}
+
+.site-footer a {
+  color: #00acee; 
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+
+    </style>
+</head>
+<body class="antialiased">
+
+   <header class="bg-slate-900/80 backdrop-blur-md shadow-xl sticky top-0 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-bold text-amber-400">Pos~an Entertainment</a>
+                </div>
+                <!-- <div class="container mx-auto px-4 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-amber-400">Pos~an Entertainment</h1>
+                    <p class="text-slate-300 mt-2 text-lg">Bringing you the best in music and entertainment.</p>
+                </div>
+                <br> -->
+                <div class="hidden md:block">
+                    <nav class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link nav-link-active">Home</a>
+                        <a href="#aboutUs.html" class="nav-link">About Us</a>
+                        <a href="#services.html" class="nav-link">Services</a>
+                        <a href="#artists.html" class="nav-link">Artists</a>
+                        <a href="#support.html" class="nav-link">Support</a>
+                        <a href="#contactUs.html" class="nav-link">Contact Us</a>
+                    </nav>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobileMenuButton" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block nav-link nav-link-active">Home</a>
+                <a href="#aboutUs.html" class="block nav-link">About Us</a>
+                <a href="#services.html" class="block nav-link">Services</a>
+                <a href="#artists.html" class="block nav-link">Artists</a>
+                <a href="#support.html" class="block nav-link">Support</a>
+                <a href="#contactUs.html" class="block nav-link">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <div id="videoGallery" class="space-y-12">
+            </div>
+    </main>
+
+    <div id="videoPlayerModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-lg flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 ease-in-out" aria-modal="true" role="dialog">
+        <div class="glassmorphism w-full max-w-6xl h-full max-h-[90vh] rounded-xl shadow-2xl flex flex-col overflow-hidden">
+            <div class="p-4 flex justify-between items-center border-b border-slate-700">
+                <h2 id="modalVideoTitle" class="text-xl font-semibold text-amber-400 truncate">Video Title</h2>
+                <button id="closeModalButton" class="text-slate-300 hover:text-white transition-colors" aria-label="Close video player">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="flex flex-col md:flex-row flex-1 overflow-hidden">
+                <div class="w-full md:w-2/3 lg:w-3/4 p-4 flex flex-col">
+                    <div class="aspect-video bg-black rounded-lg overflow-hidden shadow-lg">
+                        <iframe id="youtubePlayer" width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-3 text-center md:text-left">
+                         <a id="watchOnYouTubeLink" href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-sm">
+                            Watch on YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="w-full md:w-1/3 lg:w-1/4 p-4 border-t md:border-t-0 md:border-l border-slate-700 overflow-y-auto modal-scrollbar">
+                    <h3 id="relatedVideosHeader" class="text-lg font-semibold mb-3 text-slate-100">Up Next</h3>
+                    <div id="relatedVideosList" class="space-y-3">
+                        </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-8 mt-12 border-t border-slate-700">
+        <p class="text-slate-400">&copy; <span id="currentYear"></span> Pos~an Entertainment. All Rights Reserved.</p>
+    </footer>
+
+    <footer class="site-footer">
+    <p>
+        Website developed by 
+        <a href="https://www.linkedin.com/in/immanuel-fernandes/" target="_blank" rel="noopener noreferrer">
+        Immanuel Fernandes
+        </a>
+        ~ C.E.O. of 
+        <a href="https://www.youtube.com/@I.M.A.G.E." target="_blank" rel="noopener noreferrer">
+        I.M.A.G.E.
+        </a>
+    </p>
+
+    <p>
+        IMMANUEL MULTIMEDIA ANIMATORS & GRAPHICAL EDITORS
+    </p>     
+
+    </footer>
+
+    
+
+
+    <script>
+        const videoSeries = [
+      {
+        seriesName: "Mastikhor",
+        videos: [
+          { title: "Bagacha Mali", id: "kfcUfqKatdU" },
+          { title: "Bar", id: "kYTFdpSN0RY" },
+          { title: "Kulbi", id: "MmDFBzT1MgM" },
+          { title: "Katrina Karina Lavina", id: "BWTfncT1oiA" },
+          { title: "Taxi", id: "YIqXFllpBA0" },
+          { title: "Popat", id: "MqR8dcjAh5I" },
+          { title: "OPENING CHORUS", id: "eC6lnSK35L4" },
+          { title: "Mastikhor", id: "-HMabWzTd2M" },
+          { title: "Varad", id: "peeBgSqmRJg" },
+          { title: "East Indian Police Skit", id: "bA4f5AiTCCM" },
+          { title: "East Indian Sholay Skit", id: "fFlGRvKJ1CM" }
+        ]
+      },      
+      {
+        seriesName: "Hits",
+        videos: [
+          { title: "Apun East Indian", id: "TmUBNJ95MjQ" },
+          { title: "Waradachi Tayyari", id: "4rs1usCXphQ" },
+          { title: "Holy Matrimony", id: "bV7uestVRuw" },
+          { title: "Happy Parents Day", id: "IjbaFvbwAB4" },
+          { title: "Daktar Na Daktarini", id: "yMs2z2Wp1HM" },
+          { title: "Ninda", id: "DcccFhUs9m8" }
+        ]
+      },      
+      {
+        seriesName: "Hymns",
+        videos: [
+          { title: "JEJUS KRISTA", id: "wJpPXM8cTzM" },
+          { title: "Sant Thomas", id: "2aUTESpG-4k" },
+          { title: "Sukkur Mauli Aapli Mai", id: "6ZTEeO4rguU" },
+          { title: "Jezus Che Zalmacha Dis", id: "XdPYNrV9NLA" }
+        ]
+      },
+      {
+        seriesName: "Kaaran",
+        videos: [
+          { title: "VAILANKANNI FLAG ANTHEM", id: "8q3EumTkkGQ" },
+          { title: "Pallaai Maldisaun", id: "xPBnSCSUBoQ" },
+          { title: "DUNIYA", id: "RqClC3jD_7s" },
+          { title: "EKHI", id: "sDfDCFfAzrc" },
+          { title: "Kaaran", id: "CbixfgtbrmQ" }
+        ]
+      },
+      {
+        seriesName: "Pudding",
+        videos: [
+          { title: "Chinchauleli Manzer", id: "2ju060szLiA" },
+          { title: "Bakery", id: "IVSgvZIexxo" },
+          { title: "English Madamni", id: "ucMatsu0C9U" }
+        ]
+      },
+      {
+        seriesName: "Tributes",
+        videos: [
+          { title: "Shakshi Han Juhu Gaokari", id: "8R-da4vKEe8" },
+          { title: "Nimith", id: "8xGF8wHJ1hI" }
+        ]
+      }
+    ];
+
+        // --- Elements ---
+        const videoGallery = document.getElementById('videoGallery');
+        const modal = document.getElementById('videoPlayerModal');
+        const closeModalButton = document.getElementById('closeModalButton');
+        const youtubePlayer = document.getElementById('youtubePlayer');
+        const modalVideoTitle = document.getElementById('modalVideoTitle');
+        const relatedVideosList = document.getElementById('relatedVideosList');
+        const relatedVideosHeader = document.getElementById('relatedVideosHeader');
+        const watchOnYouTubeLink = document.getElementById('watchOnYouTubeLink');
+        const currentYearEl = document.getElementById('currentYear');
+
+        // --- Utility Functions ---
+        const getYouTubeThumbnailUrl = (videoId, quality = 'hqdefault') => `https://img.youtube.com/vi/${videoId}/${quality}.jpg`;
+        const getYouTubeEmbedUrl = (videoId) => `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`; // Added autoplay and rel=0
+        const getYouTubeWatchUrl = (videoId) => `https://www.youtube.com/watch?v=${videoId}`;
+        const placeholderImage = (videoId) => `https://placehold.co/480x360/1f2937/e5e7eb?text=Video+ID+${videoId}`;
+
+
+        // --- Render Functions ---
+        function renderVideoGallery() {
+            if (!videoGallery) return;
+            videoGallery.innerHTML = ''; // Clear existing content
+
+            videoSeries.forEach(series => {
+                const seriesSection = document.createElement('section');
+                seriesSection.className = 'mb-12';
+
+                const seriesTitle = document.createElement('h2');
+                seriesTitle.className = 'text-3xl font-semibold text-amber-300 mb-6 border-l-4 border-amber-400 pl-3';
+                seriesTitle.textContent = series.seriesName;
+                seriesSection.appendChild(seriesTitle);
+
+                const videosGrid = document.createElement('div');
+                videosGrid.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6';
+
+                series.videos.forEach(video => {
+                    const videoCard = document.createElement('div');
+                    videoCard.className = 'video-thumbnail bg-slate-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 cursor-pointer group glassmorphism';
+                    videoCard.dataset.videoId = video.id;
+                    videoCard.dataset.seriesName = series.seriesName;
+                    videoCard.dataset.videoTitle = video.title;
+
+                    const thumbnailImg = document.createElement('img');
+                    thumbnailImg.src = getYouTubeThumbnailUrl(video.id);
+                    thumbnailImg.alt = `Thumbnail for ${video.title}`;
+                    thumbnailImg.className = 'w-full h-auto object-cover';
+                    thumbnailImg.onerror = function() {
+                        this.onerror=null; // prevent infinite loop if placeholder also fails
+                        this.src=placeholderImage(video.id);
+                        this.alt = `Placeholder for video ID: ${video.id}`;
+                    };
+
+
+                    const videoInfo = document.createElement('div');
+                    videoInfo.className = 'p-4';
+
+                    const videoTitle = document.createElement('h3');
+                    videoTitle.className = 'text-md font-semibold text-slate-100 group-hover:text-amber-300 transition-colors truncate';
+                    videoTitle.textContent = video.title;
+
+                    videoInfo.appendChild(videoTitle);
+                    videoCard.appendChild(thumbnailImg);
+                    videoCard.appendChild(videoInfo);
+                    videosGrid.appendChild(videoCard);
+
+                    videoCard.addEventListener('click', () => {
+                        openModalWithVideo(video.id, video.title, series.seriesName);
+                    });
+                });
+
+                seriesSection.appendChild(videosGrid);
+                videoGallery.appendChild(seriesSection);
+            });
+        }
+
+        function renderRelatedVideos(currentVideoId, seriesName) {
+            if (!relatedVideosList || !relatedVideosHeader) return;
+            relatedVideosList.innerHTML = ''; // Clear existing
+
+            const series = videoSeries.find(s => s.seriesName === seriesName);
+            if (!series) return;
+
+            relatedVideosHeader.textContent = `Up Next in ${seriesName}`;
+
+            series.videos.forEach(video => {
+                if (video.id === currentVideoId && series.videos.length > 1) return; // Don't show current video if there are others
+
+                const relatedVideoItem = document.createElement('div');
+                relatedVideoItem.className = 'flex items-center space-x-3 p-2 rounded-md hover:bg-slate-700 cursor-pointer transition-colors';
+                relatedVideoItem.dataset.videoId = video.id;
+                relatedVideoItem.dataset.videoTitle = video.title;
+                relatedVideoItem.dataset.seriesName = seriesName;
+
+                const relatedThumbnail = document.createElement('img');
+                relatedThumbnail.src = getYouTubeThumbnailUrl(video.id, 'mqdefault');
+                relatedThumbnail.alt = `Thumbnail for ${video.title}`;
+                relatedThumbnail.className = 'w-24 h-14 object-cover rounded-md flex-shrink-0';
+                relatedThumbnail.onerror = function() {
+                    this.onerror=null;
+                    this.src=placeholderImage(video.id).replace('480x360', '120x90'); // smaller placeholder
+                    this.alt = `Placeholder for video ID: ${video.id}`;
+                };
+
+
+                const relatedTitle = document.createElement('span');
+                relatedTitle.className = 'text-sm text-slate-200 truncate flex-grow';
+                relatedTitle.textContent = video.title;
+
+                relatedVideoItem.appendChild(relatedThumbnail);
+                relatedVideoItem.appendChild(relatedTitle);
+                relatedVideosList.appendChild(relatedVideoItem);
+
+                relatedVideoItem.addEventListener('click', () => {
+                    playVideoInModal(video.id, video.title, seriesName);
+                });
+            });
+             if (relatedVideosList.children.length === 0 && series.videos.length === 1) {
+                relatedVideosList.innerHTML = `<p class="text-sm text-slate-400">This is the only video in this series.</p>`;
+            } else if (relatedVideosList.children.length === 0) {
+                 relatedVideosList.innerHTML = `<p class="text-sm text-slate-400">No other videos in this series.</p>`;
+            }
+        }
+
+        // --- Modal Logic ---
+        function openModalWithVideo(videoId, videoTitle, seriesName) {
+            if (!modal || !youtubePlayer || !modalVideoTitle || !watchOnYouTubeLink) return;
+
+            playVideoInModal(videoId, videoTitle, seriesName);
+            modal.classList.remove('hidden');
+            modal.classList.add('opacity-100');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+
+        function playVideoInModal(videoId, videoTitle, seriesName) {
+            if (!youtubePlayer || !modalVideoTitle || !watchOnYouTubeLink) return;
+            youtubePlayer.src = getYouTubeEmbedUrl(videoId);
+            modalVideoTitle.textContent = videoTitle;
+            watchOnYouTubeLink.href = getYouTubeWatchUrl(videoId);
+            renderRelatedVideos(videoId, seriesName);
+        }
+
+        function closeModal() {
+            if (!modal || !youtubePlayer) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('opacity-100');
+            youtubePlayer.src = ''; // Stop video playback
+            document.body.style.overflow = 'auto'; // Restore background scroll
+        }
+
+        // --- Event Listeners ---
+        if (closeModalButton) {
+            closeModalButton.addEventListener('click', closeModal);
+        }
+        if (modal) {
+            // Close modal on clicking outside the content (but not on content itself)
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+        // Close modal on Escape key press
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderVideoGallery();
+            if(currentYearEl) {
+                currentYearEl.textContent = new Date().getFullYear();
+            }
+            console.warn("Reminder: Please replace placeholder numeric video IDs in the 'videoSeries' array with actual YouTube Video IDs for full functionality.");
+        });
+
+    </script>
+</body>
+</html>
